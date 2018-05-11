@@ -2,9 +2,13 @@
 
 Blog application using flask
 
-How to run?
+Usage:
 ```sh
-$ export FLASK_APP=flaskblog.py
+$ export FLASK_APP=wsgi.py
 $ export FLASK_DEBUG=1
-$ flask run
+$ FLASK_ENV=development flask run
+
+-- OR --
+
+$ python wsgi.py
 ```

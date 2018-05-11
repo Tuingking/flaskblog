@@ -1,0 +1,4 @@
+SECRET_KEY=700517db4bdbce253020d799be8c11c8
+
+EMAIL_USER=courtesyna@gmail.com
+EMAIL_PASS=password

@@ -1,14 +1,18 @@
 from flask import Flask
+from sqlalchemy import MetaData
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_moment import Moment
 from flask_mail import Mail
 
-from flaskblog.config import Config
+from flaskblog.config import config
+from flaskblog.constants import SQLALCHEMY_METADATA_CONVENTION
+
+metadata = MetaData(naming_convention=SQLALCHEMY_METADATA_CONVENTION)
 
 # Initialize flask extention
-db = SQLAlchemy()
+db = SQLAlchemy(metadata=metadata)
 bcrypt = Bcrypt()
 moment = Moment()
 login_manager = LoginManager()
@@ -17,9 +21,9 @@ login_manager.login_message_category = 'info'   # info is bootstrap class
 mail = Mail()
 
 
-def create_app(config_class=Config):
+def create_app(config_name="default"):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config[config_name])
 
     # Bind extention to app
     db.init_app(app)

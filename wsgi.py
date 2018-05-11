@@ -1,6 +1,9 @@
-from flaskblog import create_app
+import os
 
-app = create_app()
+from flaskblog import create_app
+from flaskblog.config import Config
+
+app = create_app('dev')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
