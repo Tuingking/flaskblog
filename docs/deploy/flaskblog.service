@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve flaskblog
+After=network.target
+
+[Service]
+User=yoko
+Group=www-data
+WorkingDirectory=/home/yoko/flaskblog
+Environment="PATH=/home/yoko/Env/flaskblog/bin"
+ExecStart=/home/yoko/Env/flaskblog/bin/uwsgi --ini flaskblog.ini --logto /home/yoko/log/flaskblog.log
+
+[Install]
+WantedBy=multi-user.target

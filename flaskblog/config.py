@@ -4,6 +4,7 @@ import os
 class Config:
     SECRET_KEY = '700517db4bdbce253020d799be8c11c8'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Mail config
     MAIL_SERVER = 'smtp.googlemail.com'

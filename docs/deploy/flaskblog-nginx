@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name flaskblog.bendanconstruction.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    #location /static/ {
+    #    root /home/<user>/firstsite;
+    #}
+
+    location / {
+        include     uwsgi_params;
+        uwsgi_pass  unix:/home/<user>/flaskblog/flaskblog.sock;
+    }
+}
