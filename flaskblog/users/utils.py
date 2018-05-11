@@ -31,9 +31,10 @@ def save_picture(form_picture, resize=True):
 def send_reset_email(user):
     """
     NOTE:
-        if your gmail couldn't send an email,
-        You must turn of less secure,
-        by visiting https://myaccount.google.com/lesssecureapps?pli=1
+        if your gmail couldn't send an email, then:
+        - Turn on less secure (https://myaccount.google.com/lesssecureapps?pli=1)
+        - follow the step in https://www.google.com/accounts/DisplayUnlockCaptcha
+        - for more https://support.google.com/mail/answer/7126229?visit_id=1-636616406666769328-657204447&rd=2#cantsignin
     """
     token = user.get_reset_token()
     msg = Message('Password reset request',

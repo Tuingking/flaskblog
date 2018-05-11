@@ -3,6 +3,7 @@
 Blog application using flask
 
 Usage:
+1. Copy .env
 ```sh
 $ export FLASK_APP=wsgi.py
 $ export FLASK_DEBUG=1

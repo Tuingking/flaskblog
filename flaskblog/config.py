@@ -1,4 +1,8 @@
 import os
+from dotenv import load_dotenv
+from pathlib import Path  # python3 only
+env_path = Path('.') / '.env'
+load_dotenv(verbose=True, dotenv_path=env_path)
 
 
 class Config:
@@ -10,7 +14,7 @@ class Config:
 
     # Mail config
     MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = '587'
+    MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.getenv('EMAIL_USER')
     MAIL_PASSWORD = os.getenv('EMAIL_PASS')
